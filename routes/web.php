@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('admin', [AdminController::class, 'index']);
+
+Route::resource('teachers', TeacherController::class);
 
 require __DIR__.'/auth.php';
