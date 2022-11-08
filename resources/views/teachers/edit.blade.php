@@ -9,7 +9,7 @@
     {{-- main --}}
     <div class="d-flex p-10">
         <aside>
-            <a href="{{ route('teachers.index') }}">教師一覧</a>
+            <x-c-sidebar />
         </aside>
         <div class="ml-20">
 

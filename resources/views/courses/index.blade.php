@@ -15,31 +15,21 @@
             @if (session('message'))
                 {{ session('message') }}
             @endif
-            <a class="btn btn-primary" href="{{ route('teachers.create') }}">教師を登録する</a>
+            <a class="btn btn-primary" href="{{ route('courses.create') }}">コースを登録する</a>
 
 
-            @if ($teachers->isNotEmpty())
+            @if ($courses->isNotEmpty())
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">名前</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($teachers as $teacher)
+                        @foreach ($courses as $course)
                             <tr>
-                                <td><a
-                                        href="{{ route('teachers.show', ['teacher' => $teacher]) }}">{{ $teacher->name }}</a>
-                                </td>
                                 <td>
-                                    <form id="delete_{{ $teacher->id }}"
-                                        action="{{ route('teachers.destroy', ['teacher' => $teacher]) }}"
-                                        method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button onclick="deletePost(this)" class="btn btn-danger">削除する</button>
-                                    </form>
+                                    {{ $course->title }}
                                 </td>
                             </tr>
                         @endforeach
