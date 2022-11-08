@@ -7,9 +7,12 @@
 
 
   {{-- main --}}
-  <div>
+  <div class="d-flex p-10">
     <aside>
-      <a href="{{route('teachers.index')}}">教師一覧</a>
+      <a href="{{route('teachers.index')}}">教師管理</a>
     </aside>
+    <div class="ml-20">
+      ダッシュボードのTOPページです
+    </div>
   </div>
 </x-app-layout>
